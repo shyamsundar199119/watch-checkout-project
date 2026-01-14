@@ -17,6 +17,9 @@ public class ProductRepository {
     );
 
     public Product get(String id) {
+        if (!cache.containsKey(id)) {
+            throw new IllegalArgumentException("Invalid watch id: " + id);
+        }
         return cache.get(id);
     }
 }

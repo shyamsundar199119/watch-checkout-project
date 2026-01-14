@@ -20,6 +20,11 @@ public class CheckoutService {
     }
 
     public CheckoutResponse calculateCheckoutPrice(List<ProductDto> productDtoList) {
+
+        if (productDtoList == null || productDtoList.isEmpty()) {
+            throw new IllegalArgumentException("Product list must not be empty");
+        }
+
         List<CartItem> cartItemslist = productDtoList.stream().map(productDto -> calulateItemSubtotal(productDto)).collect(Collectors.toList());
         int total = cartItemslist.stream()
                 .mapToInt(CartItem::getItemSubtotal)
@@ -29,6 +34,12 @@ public class CheckoutService {
     }
 
     private CartItem calulateItemSubtotal(ProductDto productDto) {
+
+        if (productDto.getCount() <= 0) {
+            throw new IllegalArgumentException(
+                    "Product count must be greater than zero");
+        }
+
         int itemSubtotal = 0;
         Product product = productRepository.get(productDto.getProductId());
         itemSubtotal = product.getPricingRule()
