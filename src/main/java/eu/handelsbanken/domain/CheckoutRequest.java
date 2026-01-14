@@ -3,13 +3,13 @@ package eu.handelsbanken.domain;
 import java.util.List;
 
 public class CheckoutRequest {
-    private List<WatchDto> watchDtoList;
+    private List<ProductDto> productDtoList;
 
-    public CheckoutRequest(List<WatchDto> watchDtoList) {
-        this.watchDtoList = watchDtoList;
+    public CheckoutRequest(List<ProductDto> productDtoList) {
+        this.productDtoList = productDtoList;
     }
 
-    public List<WatchDto> getWatchDtoList() {
-        return watchDtoList;
+    public List<ProductDto> getProductDtoList() {
+        return productDtoList;
     }
 }

@@ -5,9 +5,9 @@ public class CartItem {
     private final int itemSubtotal;
     private final String productName;
     private final int quantity;
-    private final Watch product;
+    private final Product product;
 
-    public CartItem(int itemSubtotal, String productName, int quantity, Watch product) {
+    public CartItem(int itemSubtotal, String productName, int quantity, Product product) {
         this.itemSubtotal = itemSubtotal;
         this.productName = productName;
         this.quantity = quantity;

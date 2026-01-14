@@ -1,10 +1,10 @@
 package eu.handelsbanken.domain;
 
-public class WatchDto {
+public class ProductDto {
     private String productId;
     private int count;
 
-    public WatchDto(String productId, int count) {
+    public ProductDto(String productId, int count) {
         this.productId = productId;
         this.count = count;
     }

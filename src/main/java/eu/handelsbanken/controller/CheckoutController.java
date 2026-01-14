@@ -1,7 +1,7 @@
 package eu.handelsbanken.controller;
 
 import eu.handelsbanken.domain.CheckoutResponse;
-import eu.handelsbanken.domain.WatchDto;
+import eu.handelsbanken.domain.ProductDto;
 import eu.handelsbanken.service.CheckoutService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +21,7 @@ public class CheckoutController {
     }
 
     @PostMapping("/checkout")
-    public CheckoutResponse checkout(@RequestBody List<WatchDto> watchDtoList){
-        return checkoutService.calculateCheckoutPrice(watchDtoList);
+    public CheckoutResponse checkout(@RequestBody List<ProductDto> productDtoList){
+        return checkoutService.calculateCheckoutPrice(productDtoList);
     }
 }
