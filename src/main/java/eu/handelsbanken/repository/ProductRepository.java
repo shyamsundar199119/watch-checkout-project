@@ -1,6 +1,7 @@
 package eu.handelsbanken.repository;
 
 import eu.handelsbanken.domain.Product;
+import eu.handelsbanken.exception.NotFoundException;
 import eu.handelsbanken.pricing.BundleDiscountRule;
 import eu.handelsbanken.pricing.UnitPriceRule;
 import org.springframework.stereotype.Component;
@@ -18,7 +19,7 @@ public class ProductRepository {
 
     public Product get(String id) {
         if (!cache.containsKey(id)) {
-            throw new IllegalArgumentException("Invalid watch id: " + id);
+            throw new NotFoundException("Invalid watch id: " + id);
         }
         return cache.get(id);
     }

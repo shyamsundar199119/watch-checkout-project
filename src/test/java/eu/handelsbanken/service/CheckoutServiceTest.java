@@ -2,6 +2,7 @@ package eu.handelsbanken.service;
 
 import eu.handelsbanken.domain.CheckoutResponse;
 import eu.handelsbanken.domain.ProductDto;
+import eu.handelsbanken.exception.NotFoundException;
 import eu.handelsbanken.repository.ProductRepository;
 import org.junit.Test;
 
@@ -59,7 +60,7 @@ public class CheckoutServiceTest {
                 new ProductDto("999", 1 )
         );
 
-        assertThrows(IllegalArgumentException.class,
+        assertThrows(NotFoundException.class,
                 () -> checkoutService.calculateCheckoutPrice(products));
     }
 
@@ -70,7 +71,7 @@ public class CheckoutServiceTest {
                 new ProductDto("999", 1)
         );
 
-        assertThrows(IllegalArgumentException.class,
+        assertThrows(NotFoundException.class,
                 () -> checkoutService.calculateCheckoutPrice(products));
     }
 
