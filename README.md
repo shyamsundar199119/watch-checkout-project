@@ -27,23 +27,7 @@ controller → service → domain → pricing
 
 ---
 
-## Domain Model
-
-### Product
-Represents a purchasable item with:
-- Product ID
-- Product name
-- Unit price
-- Pricing rule
-
-### Pricing Rules
-Two pricing rules are supported:
-- `UnitPriceRule` – standard per-unit pricing
-- `BundleDiscountRule` – bundle-based discounts (e.g. 3 for 200)
-
----
-
-## 🚀 API Endpoint
+## API Endpoint
 
 ### Checkout
 
@@ -75,3 +59,69 @@ Calculates the total price for the provided cart.
   ],
   "totalAmount": 200.00
 }
+
+## Setup & Running the Application
+
+### Prerequisites
+
+Make sure you have installed:
+- Java 11 (JDK 11)
+- Maven 3.6+
+
+
+### Clone the Repository
+
+- git clone <your-repo-url>
+- cd watch-checkout-project
+
+### Build the Project
+
+- Clean and build the project using Maven:
+- mvn clean install
+
+This will download all dependencies
+Compile the code
+Run unit tests
+
+
+### Run the Application
+
+Start the Spring Boot application:
+
+mvn spring-boot:run
+
+The application will start on port 8080 by default
+
+Look for this log line:
+
+Started CheckoutApplication in X seconds
+
+### Test the Checkout API
+
+Curl to test the /api/checkout endpoint.
+
+## Future Enhancements
+
+Given more time, the following improvements could be implemented to make the project more production-ready:
+
+### Swagger Documentation Enhancements
+
+- Currently, Swagger is not included in this version.
+
+- In the future, we plan to add:
+  - Interactive API documentation for all endpoints 
+  - Example request/response payloads 
+  - Validation messages and error schemas
+
+### Method-Level JavaDoc Comments
+
+- Adding comments for service and controller methods
+
+- This will improve readability and maintainability for team members
+
+### Other Potential Improvements
+
+- Externalized product catalog (database)
+
+- Include discounted amount in response
+
