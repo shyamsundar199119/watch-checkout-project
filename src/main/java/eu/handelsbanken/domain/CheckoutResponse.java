@@ -3,17 +3,17 @@ package eu.handelsbanken.domain;
 import java.util.List;
 
 public class CheckoutResponse {
-    private List<WatchDto> watchDtoList;
+    private List<CartItem> cartItemList;
     private int totalPrice;
 
 
-    public CheckoutResponse(List<WatchDto> watchDtoList, int totalPrice) {
-        this.watchDtoList = watchDtoList;
+    public CheckoutResponse(List<CartItem> cartItemList, int totalPrice) {
+        this.cartItemList = cartItemList;
         this.totalPrice=totalPrice;
     }
 
-    public List<WatchDto> getWatchDtoList() {
-        return watchDtoList;
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
     }
 
     public int getTotalPrice() {

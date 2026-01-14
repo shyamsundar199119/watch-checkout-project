@@ -2,6 +2,7 @@ package eu.handelsbanken.service;
 
 import eu.handelsbanken.domain.CheckoutResponse;
 import eu.handelsbanken.domain.WatchDto;
+import eu.handelsbanken.repository.WatchCache;
 import org.junit.Test;
 
 import java.util.List;
@@ -10,8 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CheckoutServiceTest {
 
-    private CheckoutService checkoutService = new CheckoutService();
-
+    private CheckoutService checkoutService = new CheckoutService(new WatchCache());
 
     @Test
     public void shouldApplyDiscountPriceForOneProduct() {
